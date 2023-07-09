@@ -1,0 +1,21 @@
+.Headercontainer{
+    
+    border: 1px solid black;
+    
+}
+.navcontainer{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.navbars{
+    border: 1px solid black;
+    align-self: flex-end;
+    justify-content: space-around;
+    
+}
+a{
+    padding: 1px;
+    margin: 2px;
+}

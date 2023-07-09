@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import '../Header/header.css'
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -9,15 +9,15 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+    <header className="Headercontainer">
+      <div className="navcontainer">
         <div>
-          <Link className="text-light" to="/">
+          <Link className="text-dark" to="/">
             <h1 className="m-0">Corey Harrisons Handyman Services</h1>
           </Link>
           <p className="m-0">Get what need to be done, done!</p>
         </div>
-        <div>
+        <div className='navbars'>
           {Auth.loggedIn() ? (
             <>
               <span>Hey there, {Auth.getProfile().data.username}!</span>
