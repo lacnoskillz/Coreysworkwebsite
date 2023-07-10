@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import Main from './pages/Main'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Nav from './components/Nav'
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -47,6 +48,7 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
+          <Nav/ >
           <div className="container">
             <Routes>
               <Route 

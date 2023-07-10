@@ -1,21 +1,20 @@
 .Headercontainer{
-    
-    border: 1px solid black;
-    
-}
-.navcontainer{
-    border: 1px solid black;
     display: flex;
-    justify-content: center;
-}
-
-.navbars{
     border: 1px solid black;
-    align-self: flex-end;
-    justify-content: space-around;
+   
+    background-color:#9FC490
     
+}
+h1{
+    color: white;
 }
 a{
     padding: 1px;
     margin: 2px;
+}
+p{}
+.logo{
+   
+    height: 20vh;
+    width: 20vh
 }
