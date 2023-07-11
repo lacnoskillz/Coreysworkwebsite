@@ -2,8 +2,8 @@
     display: flex;
     border: 1px solid black;
    justify-content: space-around;
-    background-color:#43474d
-    
+    background-color:white;
+    align-items: flex-end;
 }
 h1{
     color: white;
@@ -18,7 +18,12 @@ a{
     height: 20vh;
     width: 20vh
 }
-.navdiv{
+.headercontact{
     align-self: center;
-    
+    background-color: aqua;
+    width: 10vh;
+    height: 5vh;
+}
+#headerphone{
+    align-self: center;
 }
