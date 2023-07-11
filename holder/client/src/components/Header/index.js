@@ -1,21 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Header/header.css'
+import Nav from '../Nav'
+import logo from '../../pages/images/hand.png'
 
-import logo from '../../pages/images/handyman.png'
 const Header = () => {
   
   return (
     <header className="Headercontainer">
       
         <div>
-          <img src={logo} className='logo' alt="logo"></img>
+        <Link style={{ textDecoration: 'none' }}className="text-dark" to="/">
+        <img src={logo} className='logo' alt="logo"></img>
+            </Link>
+          
         </div>
-        <div>
-          <Link style={{ textDecoration: 'none' }}className="text-dark" to="/">
-            <h1 className="m-0">Corey Harrisons Handyman Services</h1>
-          </Link>
-          <p className="m-0">Get what need to be done, done!</p>
+        <div className='navdiv'>
+          <Nav/>
+          
         </div>
       
       

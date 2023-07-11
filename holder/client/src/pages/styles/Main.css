@@ -1,0 +1,20 @@
+.maincontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.maininfo{
+    font-size: 8vh;
+    color: white
+}
+.mainsubinfo{
+color: white
+}
+.mainquote{
+    color: white
+}
