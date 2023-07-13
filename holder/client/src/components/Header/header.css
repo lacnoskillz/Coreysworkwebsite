@@ -3,7 +3,7 @@
     border: 1px solid black;
    justify-content: space-around;
     background-color:white;
-    align-items: flex-end;
+   align-items: center;
 }
 h1{
     color: white;
@@ -14,13 +14,13 @@ a{
 }
 
 .logo{
-   
+   align-self: center;
     height: 20vh;
     width: 20vh
 }
 .headercontact{
-    align-self: center;
-    background-color: aqua;
+    
+ 
     width: 10vh;
     height: 5vh;
 }

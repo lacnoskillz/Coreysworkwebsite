@@ -8,6 +8,9 @@
     background-size: cover;
     
 }
+.mainintro{
+    padding: 20%;
+}
 .maininfo{
     font-size: 8vh;
     color: white

@@ -1,9 +1,36 @@
 .navcontainer{
-    border: 1px solid black;
     
-    
+    display: flex;
+    align-self: flex-end;
 }
-
+.navbar-toggle {
+    display: none;
+  }
+  .navbars {
+    display: flex;
+  }
+  .navbars.open {
+    display: block;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 .btn{
     background-color: orange;
 }
+.navdiv{
+    align-self: flex-end;
+}
+@media screen and (max-width: 896px) {
+    .navbars {
+      display: none;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+    .navcontainer{
+    
+        display: flex;
+        align-self: center;
+    }
+  }
