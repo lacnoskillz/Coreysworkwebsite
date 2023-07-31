@@ -21,14 +21,7 @@ const Nav = () => {
       <div className={isOpen ? 'navbars open' : 'navbars'}>
         {Auth.loggedIn() ? (
           <>
-            <span>Hey there, {Auth.getProfile().data.username}!</span>
-            <button className="btn btn-lg btn-light m-2" onClick={logout}>
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <Link className="btn btn-sm btn-info m-2" to="/main">
+          <Link className="btn btn-sm btn-info m-2" to="/">
               Home
             </Link>
             <Link className="btn btn-sm btn-info m-2" to="/about">
@@ -37,7 +30,26 @@ const Nav = () => {
             <Link className="btn btn-sm btn-info m-2" to="/contact">
               Contact
             </Link>
+            <Link className="btn btn-sm btn-info m-2" to="/reviews">
+              Reviews
+            </Link>
+            <span>Hey there, {Auth.getProfile().data.username}!</span>
+            <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
             <Link className="btn btn-sm btn-info m-2" to="/">
+              Home
+            </Link>
+            <Link className="btn btn-sm btn-info m-2" to="/about">
+              About
+            </Link>
+            <Link className="btn btn-sm btn-info m-2" to="/contact">
+              Contact
+            </Link>
+            <Link className="btn btn-sm btn-info m-2" to="/reviews">
               Reviews
             </Link>
             <Link className="btn btn-sm btn-info m-2" to="/login">

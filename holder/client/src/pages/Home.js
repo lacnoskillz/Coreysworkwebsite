@@ -1,37 +1,21 @@
+
 import React from 'react';
-import { useQuery } from '@apollo/client';
+import './styles/Main.css'
+import cali from './images/cali3.jpg'
 
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
-
-import { QUERY_THOUGHTS } from '../utils/queries';
-
-const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
-
-  return (
-    <main>
-      <div className="flex-row justify-center">
-        <div
-          className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
-        >
-          <ThoughtForm />
+const Main = () => {
+   
+    return (
+    <div className='maincontainer' style={{backgroundImage: `url(${cali})`}}>
+        <div className='mainintro'>
+        <p className='maininfo'>Handy Man California</p>
+        <p className='mainsubinfo'>RELIABLE,FAIR, AND SAFE - Handyman Services, city Texas and surronding areas</p>
+        <em className='mainquote'>Lets work together</em>
         </div>
-        <div className="col-12 col-md-8 mb-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <ThoughtList
-              thoughts={thoughts}
-              title="Recent reviews."
-            />
-          )}
-        </div>
-      </div>
-    </main>
-  );
-};
+        
+    </div>
+    );
+  };
 
-export default Home;
+
+export default Main;
