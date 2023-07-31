@@ -1,9 +1,9 @@
 
 import React from 'react';
-import './styles/Main.css'
+import './styles/Home.css'
 import cali from './images/cali3.jpg'
 
-const Main = () => {
+const Home = () => {
    
     return (
     <div className='maincontainer' style={{backgroundImage: `url(${cali})`}}>
@@ -18,4 +18,4 @@ const Main = () => {
   };
 
 
-export default Main;
+export default Home;

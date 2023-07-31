@@ -1,9 +1,9 @@
 .Headercontainer{
     display: flex;
-    border: 1px solid black;
-   justify-content: space-around;
+
+   justify-content: space-between;
     background-color:white;
-   align-items: center;
+align-items: center;
 }
 h1{
     color: white;
@@ -14,7 +14,7 @@ a{
 }
 
 .logo{
-   align-self: center;
+   
     height: 20vh;
     width: 20vh
 }
@@ -25,5 +25,5 @@ a{
     height: 5vh;
 }
 #headerphone{
-    align-self: center;
+    
 }

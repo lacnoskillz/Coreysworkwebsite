@@ -1,26 +1,20 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../Header/header.css';
 import Auth from '../../utils/auth';
 import '../Nav/Nav.css';
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <nav className="navcontainer">
-      <div className={isOpen ? 'navbars open' : 'navbars'}>
+      <div className='navdiv'>
         {Auth.loggedIn() ? (
-          <>
+          <div>
           <Link className="btn btn-sm btn-info m-2" to="/">
               Home
             </Link>
@@ -37,9 +31,9 @@ const Nav = () => {
             <button className="btn btn-lg btn-light m-2" onClick={logout}>
               Logout
             </button>
-          </>
+          </div>
         ) : (
-          <>
+          <div>
             <Link className="btn btn-sm btn-info m-2" to="/">
               Home
             </Link>
@@ -55,18 +49,13 @@ const Nav = () => {
             <Link className="btn btn-sm btn-info m-2" to="/login">
               Login
             </Link>
-            <Link className="btn btn-sm btn-light m-2" to="/signup">
+            <Link className="btn btn-sm btn-info m-2" to="/signup">
               Sign Up
             </Link>
-          </>
+          </div>
         )}
       </div>
 
-      <div className={isOpen ? 'hamburger-menu open' : 'hamburger-menu'}>
-        <button className="btn btn-sm btn-info m-2" onClick={toggleMenu}>
-          ☰ Menu
-        </button>
-      </div>
     </nav>
   );
 };
