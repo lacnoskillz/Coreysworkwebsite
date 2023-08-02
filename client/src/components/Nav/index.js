@@ -46,13 +46,14 @@ const Nav = () => {
                   Reviews
                 </Link>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
+            
+                {/* <span className="nav-link">
                   Hey there, {Auth.getProfile().data.username}!
-                </span>
-              </li>
+                </span> */}
+              
+              
               <li className="nav-item">
-                <button className="btn btn-light" onClick={logout}>
+                <button className="btn btn-dark" onClick={logout}>
                   Logout
                 </button>
               </li>

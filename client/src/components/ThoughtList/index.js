@@ -12,7 +12,7 @@ const ThoughtList = ({ thoughts, title }) => {
       {thoughts &&
         thoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
-            <h4 className="card-header bg-info text-light p-2 m-0">
+            <h4 className="card-header bg-dark text-light p-2 m-0">
               {thought.thoughtAuthor} <br />
               <span style={{ fontSize: '1rem' }}>
                 made this review on {thought.createdAt}
@@ -22,7 +22,7 @@ const ThoughtList = ({ thoughts, title }) => {
               <p>{thought.thoughtText}</p>
             </div>
             <Link
-              className="btn bg-info btn-block btn-squared"
+              className="btn bg-primary btn-block btn-squared"
               to={`/thoughts/${thought._id}`}
             >
               Join the discussion.

@@ -1,0 +1,11 @@
+h4{
+    color: white
+}
+.copyright{
+    color: white
+}
+.footer-navigation{
+    display: flex;
+    justify-content: center;
+}
+
