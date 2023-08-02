@@ -11,11 +11,14 @@ position: relative;
 
 @media screen and (max-width: 896px) {
  
-  
+  .navlinkdiv{
+    display: flex;
+    flex-direction: row;
+  }
 
     .navcontainer{
     
         display: flex;
-        align-self: center;
+       
     }
   }
