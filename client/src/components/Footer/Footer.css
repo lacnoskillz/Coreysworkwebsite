@@ -1,11 +1,39 @@
 h4{
-    color: white
+    color: white;
+ 
+}
+.h4footermadewith{
+    margin-bottom: 6%;
 }
 .copyright{
     color: white
 }
 .footer-navigation{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
+.footercontainer{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-evenly;
+}
+.social-links{
+    display: flex;
+    flex-direction: column;
+}
+.footercontact{
+    display: flex;
+    flex-direction: column;
+}
+.footer-outer{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.allrightsres{
+    margin-top: 10%;
+}
+.footercontactptag{
+    color: white
+}
