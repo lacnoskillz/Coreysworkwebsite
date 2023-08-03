@@ -32,7 +32,7 @@ const Footer = () => {
           </div>
           <div className="footercontact">
         <h4>Contact</h4>
-          <a href="#"><i className="bi bi-house-fill"></i>Address</a>
+          <a href="http://maps.google.com/?q=San Diego California"><i className="bi bi-house-fill"></i>Address</a>
           <p className='footercontactptag'>City-Name California</p>
           <a href="mailto:name@email.com"><i className="bi bi-envelope-fill"></i>Email</a>
           <p className='footercontactptag'>Sample@example.com</p>
