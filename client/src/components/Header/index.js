@@ -16,7 +16,7 @@ const Header = () => {
           
         </div>
        
-        <button id="headerphone" className="btn btn-m " href="tel:+8083858740">📞(808)-555-5555</button>
+        <a  className="headerphone" href="tel:+8083858740">📞(808)-555-5555</a>
       
     </header>
    
