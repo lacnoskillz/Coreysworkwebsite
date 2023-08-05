@@ -23,6 +23,50 @@ color: white
 }
 .Servicesdiv{
 display: flex;
+flex-direction: column;
 justify-content: center;
 margin-top: 5%;
 }
+.servicestext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    
+}
+.servicesimages{
+    display: flex;
+    flex-direction: row;
+  justify-content: space-evenly;
+ align-items: center;
+   width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    
+}
+.ourservicesh2{
+    text-align: center;
+  
+}
+.servicediv{
+    height:20vh;
+    width: 20vh;
+    background-color: aliceblue;
+}
+/* Media query for desktop */
+@media (min-width: 769px) {
+    .servicesimages {
+      height: 55vh; /* Adjust the height for desktop */
+    }
+  }
+  
+  /* Media query for mobile */
+  @media (max-width: 925px) {
+    .servicesimages {
+      height: 25vh; /* Adjust the height for mobile */
+    }
+  }
+  

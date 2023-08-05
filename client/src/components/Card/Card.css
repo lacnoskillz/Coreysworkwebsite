@@ -1,0 +1,13 @@
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 20vh;
+    width: 20vh;
+  }
+  .card-title{
+    text-align: center;
+  }
+  .card-description{
+    
+  }
