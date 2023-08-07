@@ -1,4 +1,4 @@
-.card {
+/* .card {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -10,4 +10,31 @@
   }
   .card-description{
     
+  } */
+  .cardimage {
+    height: 25vh;
+    width: 30vh;
+   
+    
+  }
+  .cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 927px) {
+    .cardimage {
+      height: 12vh;
+      width: 20vh;
+     
+      
+    }
+  }
+  @media (max-width: 620px) {
+    .cardimage {
+      height: 12vh;
+      width: 12vh;
+     
+      
+    }
+  
   }

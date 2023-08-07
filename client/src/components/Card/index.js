@@ -3,10 +3,13 @@ import "./Card.css";
 
 function Card({imageUrl, Title, Description}) {
   return (
-    <div className='card'>
-      <img src={imageUrl} alt='Card Image' />
+    <div className="cardcontainer">
+    <div className='card m-1 p-1 text-center'>
+      <img className ="cardimage" src={imageUrl} alt='Card displaying a service' />
       <div className='card-title'>{Title}</div>
-      <div className="card-decription">{Description}</div>
-    </div>)
+    </div>
+    </div>
+    )
+
 }
 export default Card
