@@ -6,32 +6,35 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      reviews {
         _id
-        thoughtText
+        rating
+        reviewText
         createdAt
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_REVIEWS = gql`
+  query getReviews {
+    reviews {
       _id
-      thoughtText
-      thoughtAuthor
+      rating
+      reviewText
+      reviewAuthor
       createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+export const QUERY_SINGLE_REVIEW = gql`
+  query getSingleReview($reviewId: ID!) {
+    review(reviewId: $reviewId) {
       _id
-      thoughtText
-      thoughtAuthor
+      rating
+      reviewText
+      reviewAuthor
       createdAt
       comments {
         _id

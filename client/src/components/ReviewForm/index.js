@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS } from '../../utils/queries';
+import ReactStars from "react-rating-stars-component";
+import { ADD_REVIEW } from '../../utils/mutations';
+import { QUERY_REVIEWS } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
-const ThoughtForm = () => {
-  const [thoughtText, setThoughtText] = useState('');
-
+const ReviewForm = () => {
+  const [reviewText, setReviewText] = useState('');
+  const [rating, setRating] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
-    update(cache, { data: { addThought } }) {
+  const [addReview, { error }] = useMutation(ADD_REVIEW, {
+    update(cache, { data: { addReview } }) {
       try {
-        const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
 
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
-          data: { thoughts: [addThought, ...thoughts] },
+          query: QUERY_REVIEWS,
+          data: { reviews: [addReview, ...reviews] },
         });
       } catch (e) {
         console.error(e);
@@ -31,24 +31,28 @@ const ThoughtForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addThought({
+      const { data } = await addReview({
         variables: {
-          thoughtText,
-          thoughtAuthor: Auth.getProfile().data.username,
+          rating,
+          reviewText,
+          reviewAuthor: Auth.getProfile().data.username,
         },
       });
 
-      setThoughtText('');
+      setReviewText('');
     } catch (err) {
       console.error(err);
     }
   };
-
+  const ratingChanged = (newRating) => {
+    console.log(typeof(newRating));
+      setRating(newRating)
+  };
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, } = event.target;
 
-    if (name === 'thoughtText' && value.length <= 280) {
-      setThoughtText(value);
+    if (name === 'reviewText' && value.length <= 280) {
+      setReviewText(value);
       setCharacterCount(value.length);
     }
   };
@@ -72,15 +76,21 @@ const ThoughtForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="thoughtText"
-                placeholder="Here's a new thought..."
-                value={thoughtText}
+                name="reviewText"
+                placeholder="Add review here..."
+                value={reviewText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
-
+            <ReactStars
+            
+    count={5}
+    onChange={ratingChanged}
+    size={24}
+    activeColor="#ffd700"
+  />,
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
                 Add Review
@@ -103,4 +113,4 @@ const ThoughtForm = () => {
   );
 };
 
-export default ThoughtForm;
+export default ReviewForm;

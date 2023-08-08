@@ -9,6 +9,13 @@ const reviewSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
+  rating: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 5,
+
+  },
   reviewAuthor: {
     type: String,
     required: true,

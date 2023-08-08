@@ -42,8 +42,8 @@ const resolvers = {
 
       return { token, user };
     },
-    addReview: async (parent, { reviewText, reviewAuthor }) => {
-      const review = await Review.create({ reviewText, reviewAuthor });
+    addReview: async (parent, { reviewText, reviewAuthor , rating}) => {
+      const review = await Review.create({ reviewText, reviewAuthor, rating });
 
       await User.findOneAndUpdate(
         { username: reviewAuthor },

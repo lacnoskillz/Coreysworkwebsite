@@ -1,42 +1,52 @@
 [
   {
     "reviewText": "not great?",
-    "reviewAuthor": "Brian Kernighan"
+    "reviewAuthor": "Brian Kernighan",
+    "rating": 3
   },
   {
     "reviewText": "took too long.",
-    "reviewAuthor": "Max Kanat-Alexander"
+    "reviewAuthor": "Max Kanat-Alexander",
+    "rating": 2
   },
   {
     "reviewText": "Best service ever!.",
-    "reviewAuthor": "Why The Lucky Stiff"
+    "reviewAuthor": "Why The Lucky Stiff",
+    "rating": 5
   },
   {
     "reviewText": "Coreys the man! he fixed my shed.",
-    "reviewAuthor": "Kent Beck"
+    "reviewAuthor": "Kent Beck",
+    "rating": 5
   },
   {
     "reviewText": "Coreys ok i guess.",
-    "reviewAuthor": "Edward V. Berard"
+    "reviewAuthor": "Edward V. Berard",
+    "rating": 3
   },
   {
     "reviewText": "Diddnt do what i asked 0/10.",
-    "reviewAuthor": "Alan Kay"
+    "reviewAuthor": "Alan Kay",
+    "rating": 0
   },
   {
     "reviewText": "Fair price fair job.",
-    "reviewAuthor": "C.A.R. Hoare"
+    "reviewAuthor": "C.A.R. Hoare",
+    "rating": 4
   },
   {
     "reviewText": "Kids got talent",
-    "reviewAuthor": "David Thomas"
+    "reviewAuthor": "David Thomas",
+    "rating": 4
   },
   {
     "reviewText": "wow?! cool dood.",
-    "reviewAuthor": "Donald Knuth"
+    "reviewAuthor": "Donald Knuth",
+    "rating": 5
   },
   {
     "reviewText": "He fixed my sink!",
-    "reviewAuthor": "Lernantino"
+    "reviewAuthor": "Lernantino",
+    "rating": 4
   }
 ]

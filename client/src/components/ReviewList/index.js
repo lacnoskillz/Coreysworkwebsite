@@ -1,29 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const ThoughtList = ({ thoughts, title }) => {
-  if (!thoughts.length) {
+import ReactStars from "react-rating-stars-component";
+const ReviewList = ({ reviews, title }) => {
+  if (!reviews.length) {
     return <h3>No Reviews Yet</h3>;
   }
 
   return (
     <div>
       <h3>{title}</h3>
-      {thoughts &&
-        thoughts.map((thought) => (
-          <div key={thought._id} className="card mb-3">
+      {reviews &&
+        reviews.map((review) => (
+          <div key={review._id} className="card mb-3">
             <h4 className="card-header bg-dark text-light p-2 m-0">
-              {thought.thoughtAuthor} <br />
+              {review.reviewAuthor} <br />
               <span style={{ fontSize: '1rem' }}>
-                made this review on {thought.createdAt}
+                made this review on {review.createdAt}
               </span>
             </h4>
+           <ReactStars
+           value={review.rating}
+           edit={false}
+           />
             <div className="card-body bg-light p-2">
-              <p>{thought.thoughtText}</p>
+              <p>{review.reviewText}</p>
             </div>
             <Link
               className="btn bg-primary btn-block btn-squared"
-              to={`/thoughts/${thought._id}`}
+              to={`/reviews/${review._id}`}
             >
               Join the discussion.
             </Link>
@@ -33,4 +37,4 @@ const ThoughtList = ({ thoughts, title }) => {
   );
 };
 
-export default ThoughtList;
+export default ReviewList;

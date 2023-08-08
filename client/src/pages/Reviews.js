@@ -1,14 +1,14 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import ReviewList from '../components/ReviewList';
+import ReviewForm from '../components/ReviewForm';
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_REVIEWS } from '../utils/queries';
 
 const Reviews = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
+  const { loading, data } = useQuery(QUERY_REVIEWS);
+  const reviews = data?.reviews || [];
 
   return (
     <main>
@@ -17,14 +17,14 @@ const Reviews = () => {
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: '1px dotted #1a1a1a' }}
         >
-          <ThoughtForm />
+          <ReviewForm />
         </div>
         <div className="col-12 col-md-8 mb-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ThoughtList
-              thoughts={thoughts}
+            <ReviewList
+              reviews={reviews}
               title="Recent reviews."
             />
           )}
