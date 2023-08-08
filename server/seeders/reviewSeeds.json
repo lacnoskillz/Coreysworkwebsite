@@ -1,0 +1,42 @@
+[
+  {
+    "reviewText": "not great?",
+    "reviewAuthor": "Brian Kernighan"
+  },
+  {
+    "reviewText": "took too long.",
+    "reviewAuthor": "Max Kanat-Alexander"
+  },
+  {
+    "reviewText": "Best service ever!.",
+    "reviewAuthor": "Why The Lucky Stiff"
+  },
+  {
+    "reviewText": "Coreys the man! he fixed my shed.",
+    "reviewAuthor": "Kent Beck"
+  },
+  {
+    "reviewText": "Coreys ok i guess.",
+    "reviewAuthor": "Edward V. Berard"
+  },
+  {
+    "reviewText": "Diddnt do what i asked 0/10.",
+    "reviewAuthor": "Alan Kay"
+  },
+  {
+    "reviewText": "Fair price fair job.",
+    "reviewAuthor": "C.A.R. Hoare"
+  },
+  {
+    "reviewText": "Kids got talent",
+    "reviewAuthor": "David Thomas"
+  },
+  {
+    "reviewText": "wow?! cool dood.",
+    "reviewAuthor": "Donald Knuth"
+  },
+  {
+    "reviewText": "He fixed my sink!",
+    "reviewAuthor": "Lernantino"
+  }
+]

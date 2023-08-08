@@ -1,21 +1,21 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
+const { User, Review } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('thoughts');
+      return User.find().populate('reviews');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('thoughts');
+      return User.findOne({ username }).populate('reviews');
     },
-    thoughts: async (parent, { username }) => {
+    reviews: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
+      return Review.find(params).sort({ createdAt: -1 });
     },
-    thought: async (parent, { thoughtId }) => {
-      return Thought.findOne({ _id: thoughtId });
+    review: async (parent, { reviewId }) => {
+      return Review.findOne({ _id: reviewId });
     },
   },
 
@@ -42,19 +42,19 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, { thoughtText, thoughtAuthor }) => {
-      const thought = await Thought.create({ thoughtText, thoughtAuthor });
+    addReview: async (parent, { reviewText, reviewAuthor }) => {
+      const review = await Review.create({ reviewText, reviewAuthor });
 
       await User.findOneAndUpdate(
-        { username: thoughtAuthor },
-        { $addToSet: { thoughts: thought._id } }
+        { username: reviewAuthor },
+        { $addToSet: { reviews: review._id } }
       );
 
-      return thought;
+      return review;
     },
-    addComment: async (parent, { thoughtId, commentText, commentAuthor }) => {
-      return Thought.findOneAndUpdate(
-        { _id: thoughtId },
+    addComment: async (parent, { reviewId, commentText, commentAuthor }) => {
+      return Review.findOneAndUpdate(
+        { _id: reviewId },
         {
           $addToSet: { comments: { commentText, commentAuthor } },
         },
@@ -64,12 +64,12 @@ const resolvers = {
         }
       );
     },
-    removeThought: async (parent, { thoughtId }) => {
-      return Thought.findOneAndDelete({ _id: thoughtId });
+    removeReview: async (parent, { reviewId }) => {
+      return Review.findOneAndDelete({ _id: reviewId });
     },
-    removeComment: async (parent, { thoughtId, commentId }) => {
-      return Thought.findOneAndUpdate(
-        { _id: thoughtId },
+    removeComment: async (parent, { reviewId, commentId }) => {
+      return Review.findOneAndUpdate(
+        { _id: reviewId },
         { $pull: { comments: { _id: commentId } } },
         { new: true }
       );
