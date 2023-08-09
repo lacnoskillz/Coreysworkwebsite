@@ -36,7 +36,7 @@ const Footer = () => {
           <p className='footercontactptag'>City-Name California</p>
           <a href="mailto:name@email.com"><i className="bi bi-envelope-fill"></i>Email</a>
           <p className='footercontactptag'>Sample@example.com</p>
-          <a href="tel:5555555555"><i className="bi bi-telephone-fill"></i>Phone</a>
+          <a href="tel:8088707003"><i className="bi bi-telephone-fill"></i>Phone</a>
           <p className='footercontactptag'>555-555-5555</p>
         </div>
         <div className="footer-navigation text-center">
