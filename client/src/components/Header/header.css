@@ -35,3 +35,6 @@ h1{
 .headerphone:hover{
     background-color:  rgb(238, 155, 0);
 }
+.headerphonediv{
+    margin: 1%;
+}
