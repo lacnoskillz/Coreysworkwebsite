@@ -20,9 +20,9 @@ const Footer = () => {
           
           <div className="social-links">
       <h4>Socials</h4>
-            <a href="https://twitter.com/yourtwitter" target="_blank" rel="noopener noreferrer">
+            {/* <a href="https://twitter.com/yourtwitter" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-twitter"></i>
-            </a>
+            </a> */}
             <a href="https://www.facebook.com/yourfacebook" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-facebook"></i>
             </a>
@@ -37,7 +37,7 @@ const Footer = () => {
           <a href="mailto:name@email.com"><i className="bi bi-envelope-fill"></i>Email</a>
           <p className='footercontactptag'>Sample@example.com</p>
           <a href="tel:8088707003"><i className="bi bi-telephone-fill"></i>Phone</a>
-          <p className='footercontactptag'>555-555-5555</p>
+          <p className='footercontactptag'>808-870-7003</p>
         </div>
         <div className="footer-navigation text-center">
         <h4>Links</h4>

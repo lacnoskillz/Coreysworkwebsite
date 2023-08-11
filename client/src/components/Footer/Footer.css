@@ -4,6 +4,7 @@ h4{
 }
 .h4footermadewith{
     margin-bottom: 6%;
+    border: none;
 }
 .copyright{
     color: white
@@ -37,3 +38,13 @@ h4{
 .footercontactptag{
     color: white
 }
+  @media screen and (max-width: 590px ) {
+    .footercontainer{
+      flex-direction: column;
+    }
+    h4{
+       
+        border: 1px solid white;
+     
+    }
+  }
