@@ -85,6 +85,7 @@ const Home = () => {
     setEndIdx((prevEndIdx) => prevEndIdx - 1);
   };
   return (
+    
     <div>
       <div className='maincontainer' style={{ backgroundImage: `url(${cali})` }}>
         <div className='mainintro'>
@@ -123,7 +124,7 @@ const Home = () => {
     <Card key={index} {...card} />
   ))}
 
-  
+
   <button
     onClick={handleNextClick}
     className={`btn btn-primary nextpage ${endIdx >= cardData.length ? 'disabled' : ''}`}
