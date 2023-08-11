@@ -118,9 +118,12 @@ const Home = () => {
   >
     &#8249;
   </button>
-  {cardData.slice(startIdx, endIdx).map((card, index) => (
+
+  {cardData.slice(startIdx, endIdx).map((card, index)=> (
     <Card key={index} {...card} />
   ))}
+
+  
   <button
     onClick={handleNextClick}
     className={`btn btn-primary nextpage ${endIdx >= cardData.length ? 'disabled' : ''}`}
