@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-corysworkwebsite-dev-142454-authRole",
+      "UnauthRoleArn": "arn:aws:iam::161364307459:role/amplify-corysworkwebsite-dev-142454-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::161364307459:role/amplify-corysworkwebsite-dev-142454-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-corysworkwebsite-dev-142454-deployment",
+      "UnauthRoleName": "amplify-corysworkwebsite-dev-142454-unauthRole",
+      "StackName": "amplify-corysworkwebsite-dev-142454",
+      "StackId": "arn:aws:cloudformation:us-east-1:161364307459:stack/amplify-corysworkwebsite-dev-142454/96d8ac40-37b3-11ee-be4c-1272e2b5acdf",
+      "AmplifyAppId": "d35sem1ff9s5i8"
+    }
+  }
+}

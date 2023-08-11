@@ -1,0 +1,41 @@
+.coreyimage{
+    border-radius: 40%;
+    height: 40vh;
+    width: 40vh
+}
+
+.headerdiv {
+    background-image: url('../images/aboutpic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* This will make sure the image covers the entire div */
+ 
+    height: 35vh;
+    
+}
+.Abouth2 {
+    position: relative;
+   right: 25%;
+   top: 40%;
+    text-align: center;
+    color: white;
+    
+}
+.picaboutdiv{
+    margin: 3%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.aboutdiv{
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+    width: 40vh;
+}
+@media (max-width: 770px) {
+    .picaboutdiv{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
