@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm } from '@formspree/react';
 import '../pages/styles/Contact.css'
 const Contact = () => {
   useEffect(() => {
     const handleScroll = () => {
       const mainContainer = document.querySelector('.headerdiv2');
-      const scrollPosition = window.scrollY;
-      mainContainer.style.backgroundPosition = `center ${60 - scrollPosition * 0.07}%`; // Update this line
+      if (mainContainer) { // Check if the element exists
+        const scrollPosition = window.scrollY;
+        mainContainer.style.backgroundPosition = `center ${60 - scrollPosition * 0.07}%`;
+      }
     };
-  
+
     if (window.innerWidth > 960) {
       window.addEventListener('scroll', handleScroll);
     }
-  
+
     return () => {
       if (window.innerWidth > 960) {
         window.removeEventListener('scroll', handleScroll);
@@ -21,7 +23,7 @@ const Contact = () => {
   }, []);
   const [state, handleSubmit] = useForm("mjvqypdy");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return <h2 className='successpage'>Thank you for reaching out. I will get back to you as soon as I can!</h2>;
   }
     return (
       <div>
@@ -40,7 +42,7 @@ const Contact = () => {
         <div className="mb-3">
           <label className="form-label">Name</label>
           {/* added onBlur that runs logic that adds a span when its empty and user clicks off dom else its invisible */}
-          <input type="name" className="form-control" id="name" onBlur={(e) => {
+          <input type="name" className="form-control" required={true} id="name" onBlur={(e) => {
             if (!e.target.value) {
               document.getElementById('nameerr').innerHTML = '<span style="color:red; font-size: 1vh;">This field is required.</span>'
             } else {

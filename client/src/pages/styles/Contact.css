@@ -1,104 +1,126 @@
 /* Header */
 .headerdiv2 {
-    position: relative; /* Add position relative to the container */
+    position: relative;
+    /* Add position relative to the container */
     background-image: url('../images/contactphotocoreywork.jpg');
     background-repeat: no-repeat;
-    background-size: cover; /* This will make sure the image covers the entire div */
+    background-size: cover;
+    /* This will make sure the image covers the entire div */
 
- background-position: center;
+    background-position: center;
     height: 35vh;
-    
-    
+
+
 }
+
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for dimming effect */
-    pointer-events: none; /* Allow click-through to content below */
-  }
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust opacity for dimming effect */
+    pointer-events: none;
+    /* Allow click-through to content below */
+}
+
 .Contacth2 {
     position: relative;
-   right: 25%;
-   top: 40%;
+    right: 25%;
+    top: 40%;
     text-align: center;
     color: white;
-    
+
 }
-.headerdiv3{
+
+.headerdiv3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.Contacth3{
+
+.Contacth3 {
     border-bottom: 1px solid black;
 }
-.contactphonehref{
+
+.contactphonehref {
     text-decoration: none;
 }
+/* sucesspage */
+.successpage{
+    text-align: center;
+    margin: 5%;
+}
 /* Form */
-.Contactcontainer{
-    
-    
-   
+form{
+    border: 1px solid black;
+    border-radius: 20px;
+   padding: 3%;
+   box-shadow: 2px 1px 1px black;
+}
+.Contactcontainer {
     display: flex;
     flex-direction: column;
-   
-   
     border-radius: 1%;
-
-    padding:5%;
-    
+    padding: 5%;
     font-size: x-large;
     justify-content: center;
 }
 
-.thankyou{
+.thankyou {
     text-align: center;
 }
-#nameerr{
+
+#nameerr {
     text-align: end;
     margin-top: -18px;
 }
-#emailerr{
+
+#emailerr {
     margin-top: -18px;
     text-align: center;
 }
-#texterr{
+
+#texterr {
     margin-top: -18px;
     text-align: center;
 }
-#nameerr{
+
+#nameerr {
     margin-top: -18px;
     text-align: center;
 }
-.errdiv{
+
+.errdiv {
     margin-top: -18px;
     text-align: center;
 }
-#recapdiv{
+
+#recapdiv {
     display: flex;
-  justify-content: center;
-   flex-direction: row;
-   padding: 10px;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px;
 }
-span{
-    padding:1px;
+
+span {
+    padding: 1px;
 }
-@media only screen and (max-width: 713px){
-    #recapdiv{
+
+@media only screen and (max-width: 713px) {
+    #recapdiv {
         display: flex;
         justify-content: center;
-         flex-direction: column;
+        flex-direction: column;
     }
-    .Contactcontainer{
-    
-    
-      
+
+    .Contactcontainer {
+
+
+
         height: 100%;
-       
+
     }
-    }
+}
