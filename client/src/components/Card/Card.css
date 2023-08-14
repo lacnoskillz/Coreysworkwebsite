@@ -5,16 +5,21 @@
     height: 20vh;
     width: 20vh;
   }
-  .card-title{
-    text-align: center;
-  }
+
   .card-description{
     
   } */
+  .card-title:hover{
+   cursor: default;
+  }
   .cardimage {
     height: 25vh;
     width: 30vh;
    
+    
+  }
+  .cardimage:hover{
+  cursor: pointer;
     
   }
   .cardcontainer{

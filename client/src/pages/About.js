@@ -35,6 +35,12 @@ const About = () => {
         <img className='coreyimage' src={coreypic} alt="Corey's Picture" />
       </div>
       </div>
+      <div className='calldiv'>
+      Call and let me know how I can help you!
+      </div>
+      <div className='buttondiv'>
+<button class="button-89" role="button">Call Now: (808)-808-8080</button>
+</div>
     </div>
   );
 };
