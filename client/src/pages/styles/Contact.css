@@ -1,0 +1,104 @@
+/* Header */
+.headerdiv2 {
+    position: relative; /* Add position relative to the container */
+    background-image: url('../images/contactphotocoreywork.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* This will make sure the image covers the entire div */
+
+ background-position: center;
+    height: 35vh;
+    
+    
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for dimming effect */
+    pointer-events: none; /* Allow click-through to content below */
+  }
+.Contacth2 {
+    position: relative;
+   right: 25%;
+   top: 40%;
+    text-align: center;
+    color: white;
+    
+}
+.headerdiv3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Contacth3{
+    border-bottom: 1px solid black;
+}
+.contactphonehref{
+    text-decoration: none;
+}
+/* Form */
+.Contactcontainer{
+    
+    
+   
+    display: flex;
+    flex-direction: column;
+   
+   
+    border-radius: 1%;
+
+    padding:5%;
+    
+    font-size: x-large;
+    justify-content: center;
+}
+
+.thankyou{
+    text-align: center;
+}
+#nameerr{
+    text-align: end;
+    margin-top: -18px;
+}
+#emailerr{
+    margin-top: -18px;
+    text-align: center;
+}
+#texterr{
+    margin-top: -18px;
+    text-align: center;
+}
+#nameerr{
+    margin-top: -18px;
+    text-align: center;
+}
+.errdiv{
+    margin-top: -18px;
+    text-align: center;
+}
+#recapdiv{
+    display: flex;
+  justify-content: center;
+   flex-direction: row;
+   padding: 10px;
+}
+span{
+    padding:1px;
+}
+@media only screen and (max-width: 713px){
+    #recapdiv{
+        display: flex;
+        justify-content: center;
+         flex-direction: column;
+    }
+    .Contactcontainer{
+    
+    
+      
+        height: 100%;
+       
+    }
+    }

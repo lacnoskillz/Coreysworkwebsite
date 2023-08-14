@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import coreypic from './images/coreypic.jpeg';
 import './styles/About.css';
-import aboutpic from './images/aboutpic.jpg'
+
 const About = () => {
   useEffect(() => {
     const handleScroll = () => {
