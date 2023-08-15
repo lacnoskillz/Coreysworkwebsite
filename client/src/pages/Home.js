@@ -1,21 +1,28 @@
-import React, {  useState } from 'react';
+import React, {  useState, //useEffect
+} from 'react';
 import './styles/Home.css';
 import cali from './images/cali3.jpg';
 import { Link } from 'react-router-dom';
-import home from './images/homeinside.png'
+import home from './images/house2.jpg'
 import Card from '../components/Card'
 const Home = () => {
   // useEffect(() => {
   //   const handleScroll = () => {
   //     const mainContainer = document.querySelector('.servicesimages');
-  //     const scrollPosition = window.scrollY;
-  //     mainContainer.style.backgroundPositionY = -scrollPosition * 0.04 + 'vh';
+  //     if (mainContainer) { // Check if the element exists
+  //       const scrollPosition = window.scrollY;
+  //       mainContainer.style.backgroundPosition = `center ${60 - scrollPosition * 0.07}%`;
+  //     }
   //   };
 
-  //   window.addEventListener('scroll', handleScroll);
+  //   if (window.innerWidth > 960) {
+  //     window.addEventListener('scroll', handleScroll);
+  //   }
 
   //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
+  //     if (window.innerWidth > 960) {
+  //       window.removeEventListener('scroll', handleScroll);
+  //     }
   //   };
   // }, []);
   const initialNumOfCards = 3;
