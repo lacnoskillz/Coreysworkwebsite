@@ -9,6 +9,9 @@ h4{
 .copyright{
     color: white
 }
+.made-by{
+    color: white
+}
 .footer-navigation{
     display: flex;
     flex-direction: column;

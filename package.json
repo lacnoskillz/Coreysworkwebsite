@@ -18,6 +18,7 @@
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "react-rating-stars-component": "^2.2.0"
   }
 }
