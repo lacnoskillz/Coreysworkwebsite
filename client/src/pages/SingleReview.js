@@ -37,7 +37,7 @@ const SingleReview = () => {
           style={{
             fontSize: '1.5rem',
             fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
+            border: '1px solid black',
             lineHeight: '1.5',
           }}
         >

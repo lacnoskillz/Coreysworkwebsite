@@ -11,7 +11,7 @@ const ReviewList = ({ reviews, title }) => {
       <h3>{title}</h3>
       {reviews &&
         reviews.map((review) => (
-          <div key={review._id} className="card mb-3">
+          <div key={review._id} className="card mb-4">
             <h4 className="card-header bg-dark text-light p-2 m-0">
               {review.reviewAuthor} <br />
               <span style={{ fontSize: '1rem' }}>

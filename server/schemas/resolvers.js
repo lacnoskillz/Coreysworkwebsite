@@ -4,6 +4,14 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+     //find info of logged in user
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id);
+        return user;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
     users: async () => {
       return User.find().populate('reviews');
     },

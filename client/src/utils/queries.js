@@ -44,3 +44,14 @@ export const QUERY_SINGLE_REVIEW = gql`
     }
   }
 `;
+//declare query for getting me that has user info
+export const QUERY_ME = gql`
+{
+me {
+_id
+email
+password
+username
+reviews
+}
+}`;
