@@ -2,6 +2,9 @@ h4{
     color: white;
  
 }
+.bi{
+    margin: 1%
+}
 .h4footermadewith{
     margin-bottom: 6%;
     border: none;
@@ -26,10 +29,13 @@ h4{
 .social-links{
     display: flex;
     flex-direction: column;
+    margin-bottom: 1%;
+    
 }
 .footercontact{
     display: flex;
     flex-direction: column;
+    
 }
 .footer-outer{
     margin-top: 1%;
@@ -50,4 +56,5 @@ h4{
         border: 1px solid white;
      
     }
+  
   }

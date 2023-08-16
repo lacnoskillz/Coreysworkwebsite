@@ -32,7 +32,7 @@ const Contact = () => {
   <h2 className='Contacth2'>Contact</h2>
 </div>
       <div className='Contactcontainer'>
-      <div className='headerdiv3'>
+      <div className='Contactdiv3'>
       <h3 className='Contacth3'>Contact Info</h3>
       <p>CALL or TEXT: <a href="tel:808-870-7003" className='contactphonehref'>(808)870-7003</a></p>
       <p>Email: sample@email.com</p>

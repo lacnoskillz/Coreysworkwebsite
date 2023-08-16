@@ -7,11 +7,11 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Reviews from './pages/Reviews';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import SingleReview from './pages/SingleReview';
+import Services from './pages/Services';
+// import Reviews from './pages/Reviews';
+// import Signup from './pages/Signup';
+// import Login from './pages/Login';
+// import SingleReview from './pages/SingleReview';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home'
@@ -68,17 +68,17 @@ function App() {
                 path="/contact" 
                 element={<Contact />} 
               />
-              <Route 
+              {/* <Route 
                 path="/login" 
                 element={<Login />} 
               />
               <Route 
                 path="/signup" 
                 element={<Signup />} 
-              />
+              /> */}
               <Route 
-                path="/reviews/:reviewId" 
-                element={<SingleReview />} 
+                path="/services" 
+                element={<Services />} 
               />
             </Routes>
           

@@ -98,7 +98,7 @@ const Home = () => {
         <div className='mainintro'>
           <p className='maininfo'>Handy Man California</p>
           <p className='mainsubinfo'>RELIABLE, FAIR, AND SAFE - Handyman Services, San Francisco and surrounding areas</p>
-          <em className='mainquote'>Contact me today for a free quote and lets work together</em><br></br>
+          <em className='mainquote'>Contact me today and lets work together</em><br></br>
           <Link to="/contact">
             Contact Page
           </Link>
@@ -107,7 +107,7 @@ const Home = () => {
       <div className='Servicesdiv'>
         <div className='servicestext'>
        <h2>Professional Handyman and Repair Services</h2>
-       <p>Welcome to Corey's Handyman Repair Services, your go-to solution for all your handyman needs in sunny California. I take 
+       <p>Welcome to Corey's Handyman & Repair Services, your go-to solution for all your handyman needs in sunny California. I take 
         pride in being a full-service handyman business, equipped
          to handle a wide array of tasks. Reach out today at (808) 870-7003 
          to discuss your home improvement plans. Let me make your home a better and safer place!
