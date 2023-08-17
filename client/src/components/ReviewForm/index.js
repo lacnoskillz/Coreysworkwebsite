@@ -11,7 +11,7 @@ const ReviewForm = () => {
   const [reviewText, setReviewText] = useState('');
   const [rating, setRating] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
-
+  const [newReview, setNewReview] = useState(null);
   const [addReview, { error }] = useMutation(ADD_REVIEW, {
     update(cache, { data: { addReview } }) {
       try {
@@ -21,6 +21,7 @@ const ReviewForm = () => {
           query: QUERY_REVIEWS,
           data: { reviews: [addReview, ...reviews] },
         });
+        window.location.reload()
       } catch (e) {
         console.error(e);
       }
@@ -41,13 +42,18 @@ const ReviewForm = () => {
       skip: !loggedInUsername, // Skip the query if not logged in
     }
   );
+let h3value = ""
 
   const userReviews = userData?.user?.reviews;
-  console.log(userReviews,"reviews")
+  // console.log(userReviews,"userreverere")
+  if(!userReviews || userReviews[0] === undefined){
+    h3value = "Leave a Review"
+  }
+  // console.log(userReviews,"reviews")
   //handle submit adding review
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
       const { data } = await addReview({
         variables: {
@@ -56,8 +62,9 @@ const ReviewForm = () => {
           reviewAuthor: Auth.getProfile().data.username,
         },
       });
-
+  
       setReviewText('');
+      setNewReview(data.addReview); // Set the newly created review data
     } catch (err) {
       console.error(err);
     }
@@ -77,7 +84,7 @@ const ReviewForm = () => {
 
   return (
     <div>
-      <h3>Leave a Review</h3>
+      <h3>{h3value}</h3>
   
       {Auth.loggedIn() ? (
         <>
@@ -126,7 +133,26 @@ const ReviewForm = () => {
           ) : userReviews && userReviews.length > 0 ? (
             // Display the user's review
             <>
-                   <div key={userReviews[0]._id} className="card mb-4">
+            {newReview ? (
+  // Display the newly created review
+  <div key={newReview._id} className="card mb-4">
+    <h4 className="card-header bg-dark text-light p-2 m-0">
+      You made this Review <br />
+      <span style={{ fontSize: '1rem' }}>
+        date made {newReview.createdAt}
+      </span>
+    </h4>
+    <ReactStars
+      value={newReview.rating}
+      edit={false}
+    />
+    <div className="card-body bg-light p-2">
+      <p>{newReview.reviewText}</p>
+    </div>
+  </div>
+) : (
+  // Display the existing user's review
+  <div key={userReviews[0]._id} className="card mb-4">
             <h4 className="card-header bg-dark text-light p-2 m-0">
               You made this Review <br />
               <span style={{ fontSize: '1rem' }}>
@@ -142,6 +168,9 @@ const ReviewForm = () => {
             </div>
           
           </div>
+            ) 
+            }
+            
             </>
           ) : (
             // Handle other cases or show loading state
