@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import ReactStars from "react-rating-stars-component";
-import { ADD_REVIEW } from '../../utils/mutations';
+import { ADD_REVIEW,REMOVE_REVIEW } from '../../utils/mutations';
 import { QUERY_REVIEWS } from '../../utils/queries';
 import { QUERY_USER } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/client';
+
 const ReviewForm = () => {
   const [reviewText, setReviewText] = useState('');
   const [rating, setRating] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
   const [newReview, setNewReview] = useState(null);
+  const [removeReview, {err}] = useMutation(REMOVE_REVIEW)
   const [addReview, { error }] = useMutation(ADD_REVIEW, {
     update(cache, { data: { addReview } }) {
       try {
@@ -82,6 +84,23 @@ let h3value = ""
     }
   };
 
+  const handleRemoveReview = async (reviewId) => {
+    try {
+      const { data } = await removeReview({
+        variables: {
+          reviewId: reviewId
+        },
+        // Optionally, you can update the cache to reflect the removal
+       
+        
+      });
+      window.location.reload()
+      // Optionally, you can set a message or perform any other actions after the review is removed
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
   return (
     <div>
       <h3>{h3value}</h3>
@@ -156,7 +175,7 @@ let h3value = ""
             <h4 className="card-header bg-dark text-light p-2 m-0">
               You made this Review <br />
               <span style={{ fontSize: '1rem' }}>
-                date made {userReviews[0].createdAt}
+                on {userReviews[0].createdAt}
               </span>
             </h4>
            <ReactStars
@@ -166,8 +185,12 @@ let h3value = ""
             <div className="card-body bg-light p-2">
               <p>{userReviews[0].reviewText}</p>
             </div>
-          
+            <div>
+            {/* <button className='btn btn-primary m-3'>edit</button> */}
+          <button className='btn btn-danger m-3 ' onClick={() => handleRemoveReview(userReviews[0]._id)}>delete</button>
           </div>
+          </div>
+          
             ) 
             }
             

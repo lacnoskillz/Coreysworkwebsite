@@ -41,7 +41,7 @@ const About = () => {
       Call and let me know how I can help you!
       </div>
       <div className='buttondiv'>
-<button class="button-89" >Call Now: (808)-808-8080</button>
+<button className="button-89" >Call Now: (808)-808-8080</button>
 </div>
     </div>
   );

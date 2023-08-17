@@ -25,11 +25,11 @@ const ReviewList = ({ reviews, title }) => {
             <div className="card-body bg-light p-2">
               <p>{review.reviewText}</p>
             </div>
-            <Link
+            <Link 
               className="btn bg-primary btn-block btn-squared"
               to={`/reviews/${review._id}`}
             >
-              Join the discussion.
+              Reply to Review.
             </Link>
           </div>
         ))}
