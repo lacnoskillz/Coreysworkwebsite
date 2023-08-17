@@ -11,9 +11,10 @@ const ReviewList = ({ reviews, title }) => {
     reviews.map(() => false)
   );
   const [reviewList, setReviewList] = useState(reviews);
-
-  const userRole = auth.loggedIn ? auth.getProfile().data.role : null;
-
+  let userRole = "user"
+if(auth.loggedIn()){
+   userRole = auth.loggedIn ? auth.getProfile().data.role : null;
+}
   const handleRemoveReview = async (reviewId, index) => {
     try {
       const { data } = await removeReview({
