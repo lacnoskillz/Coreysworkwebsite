@@ -19,6 +19,11 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  role: {
+    type: String,
+    enum: ['user', 'admin'], // Define your roles here
+    default: 'user', // Default role for new users
+  },
   reviews: [
     {
       type: Schema.Types.ObjectId,
