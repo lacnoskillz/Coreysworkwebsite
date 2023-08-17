@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 const ReviewList = ({ reviews, title }) => {
   if (!reviews.length) {
-    return <h3>No Reviews Yet</h3>;
+    return <h3>Be the first to leave a review!</h3>;
   }
 
   return (

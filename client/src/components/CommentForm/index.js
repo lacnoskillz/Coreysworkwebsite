@@ -14,7 +14,6 @@ const CommentForm = ({ reviewId }) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
       const { data } = await addComment({
         variables: {
@@ -41,8 +40,6 @@ const CommentForm = ({ reviewId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this?</h4>
-
       {Auth.loggedIn() ? (
         <>
           <p
@@ -57,7 +54,7 @@ const CommentForm = ({ reviewId }) => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="col-12 col-lg-9 ">
               <textarea
                 name="commentText"
                 placeholder="Add your comment..."

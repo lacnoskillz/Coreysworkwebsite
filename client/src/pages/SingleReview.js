@@ -23,6 +23,7 @@ const SingleReview = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
@@ -48,7 +49,8 @@ const SingleReview = () => {
       <div className="my-5">
         <CommentList comments={review.comments} />
       </div>
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+      <div className="m-3 p-4">
+        <h3>Add a comment</h3>
         <CommentForm reviewId={review._id} />
       </div>
     </div>

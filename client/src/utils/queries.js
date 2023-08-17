@@ -40,6 +40,7 @@ export const QUERY_SINGLE_REVIEW = gql`
         _id
         commentText
         createdAt
+        commentAuthor
       }
     }
   }
