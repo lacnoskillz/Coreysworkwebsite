@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_COMMENT } from '../../utils/mutations';
-
+import auth from '../../utils/auth';
 import Auth from '../../utils/auth';
 
 const CommentForm = ({ reviewId }) => {
@@ -11,7 +11,13 @@ const CommentForm = ({ reviewId }) => {
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addComment, { error }] = useMutation(ADD_COMMENT);
-
+  let userRole = "user"
+  let userreviewid = ""
+if(auth.loggedIn()){
+   userRole = auth.loggedIn ? auth.getProfile().data.role : null;
+  //  console.log(auth.getProfile().data.reviews[0])
+   userreviewid = auth.getProfile().data.reviews[0]
+}
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -40,7 +46,7 @@ const CommentForm = ({ reviewId }) => {
 
   return (
     <div>
-      {Auth.loggedIn() ? (
+      {userRole === 'admin' || userreviewid == reviewId && (
         <>
           <p
             className={`m-0 ${
@@ -72,12 +78,9 @@ const CommentForm = ({ reviewId }) => {
             </div>
           </form>
         </>
-      ) : (
-        <p>
-          You need to be logged in to make comments and reviews. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-        </p>
       )}
+       
+      
     </div>
   );
 };

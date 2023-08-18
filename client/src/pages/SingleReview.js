@@ -50,7 +50,7 @@ const SingleReview = () => {
         <CommentList comments={review.comments} />
       </div>
       <div className="m-3 p-4">
-        <h3>Add a comment</h3>
+        
         <CommentForm reviewId={review._id} />
       </div>
     </div>

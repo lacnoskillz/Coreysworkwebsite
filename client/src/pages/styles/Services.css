@@ -63,3 +63,10 @@
     justify-content: center;
     margin: 3%;
 }
+@media (max-width: 620px) {
+    .servicesdescription{
+     
+        font-size: small;
+        
+    }
+  }

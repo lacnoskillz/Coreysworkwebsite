@@ -94,7 +94,7 @@ if(auth.loggedIn()){
             className="btn bg-primary btn-block btn-squared"
             to={`/reviews/${review._id}`}
           >
-            Reply to Review
+            View comments
           </Link>
         </div>
       ))}
