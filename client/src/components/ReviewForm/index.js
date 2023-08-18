@@ -2,18 +2,62 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import ReactStars from "react-rating-stars-component";
-import { ADD_REVIEW,REMOVE_REVIEW } from '../../utils/mutations';
-import { QUERY_REVIEWS } from '../../utils/queries';
-import { QUERY_USER } from '../../utils/queries';
+import { ADD_REVIEW,REMOVE_REVIEW, UPDATE_REVIEW } from '../../utils/mutations';
+import { QUERY_REVIEWS, QUERY_USER} from '../../utils/queries';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/client';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
 const ReviewForm = () => {
   const [reviewText, setReviewText] = useState('');
-  const [rating, setRating] = useState('');
+  const [rating, setRating] = useState(0);
   const [characterCount, setCharacterCount] = useState(0);
   const [newReview, setNewReview] = useState(null);
-  const [removeReview, {err}] = useMutation(REMOVE_REVIEW)
+  const [removeReview, {err}] = useMutation(REMOVE_REVIEW,{
+    pollInterval: 500,
+  })
+  const [show, setShow] = useState(false);
+    const [editedReviewId, setEditedReviewId] = useState(null);
+    const [editedReviewText, setEditedReviewText] = useState('');
+    const [editedRating, setEditedRating] = useState(0);
+    const [updateReview] = useMutation(UPDATE_REVIEW,{
+      pollInterval: 500,
+    });
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+    const handleEditSubmit = async (event) => {
+    event.preventDefault();
+  
+    // Send the edited review data to the server using your updateReview mutation
+    try {
+      await updateReview({
+        variables: {
+          reviewId: editedReviewId,
+          rating: editedRating,
+          reviewText: editedReviewText,
+        },
+      });
+  
+      // Reset the edit state
+     
+      setEditedReviewId(null);
+      setEditedReviewText('');
+      setEditedRating(0);
+    } catch (error) {
+      console.error(error);
+    }
+    window.location.reload()
+  };
+    const handleEditChange = (event) => {
+    // Update the state as the user types in the edit form
+    setEditedReviewText(event.target.value);
+  };
+  
+  const handleEditRatingChange = (newRating) => {
+    setEditedRating(newRating);
+  };
   const [addReview, { error }] = useMutation(ADD_REVIEW, {
     update(cache, { data: { addReview } }) {
       try {
@@ -47,6 +91,7 @@ const ReviewForm = () => {
 let h3value = ""
 
   const userReviews = userData?.user?.reviews;
+ 
   // console.log(userReviews,"userreverere")
   if(!userReviews || userReviews[0] === undefined){
     h3value = "Leave a Review"
@@ -86,7 +131,7 @@ let h3value = ""
 
   const handleRemoveReview = async (reviewId) => {
     try {
-      const { data } = await removeReview({
+      await removeReview({
         variables: {
           reviewId: reviewId
         },
@@ -99,8 +144,9 @@ let h3value = ""
     } catch (err) {
       console.error(err);
     }
+    
   };
-  
+ 
   return (
     <div>
       <h3>{h3value}</h3>
@@ -186,7 +232,14 @@ let h3value = ""
               <p>{userReviews[0].reviewText}</p>
             </div>
             <div>
-            {/* <button className='btn btn-primary m-3'>edit</button> */}
+            <Button variant="primary"   onClick={() => {
+    handleShow();
+    setEditedReviewId(userReviews[0]._id); // Set the review ID for editing
+    setEditedRating(userReviews[0].rating); // Set the initial rating for editing
+    setEditedReviewText(userReviews[0].reviewText); // Set the initial review text for editing
+  }}>
+        edit
+      </Button>
           <button className='btn btn-danger m-3 ' onClick={() => handleRemoveReview(userReviews[0]._id)}>delete</button>
           </div>
           </div>
@@ -207,7 +260,44 @@ let h3value = ""
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
+      <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Edit Review</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Form>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                  <Form.Label>Rating</Form.Label>
+                  <ReactStars
+                    count={5}
+                    onChange={handleEditRatingChange}
+                    value={editedRating}
+                    size={24}
+                    activeColor="#ffd700"
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                  <Form.Label>Review</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    rows={3}
+                    value={editedReviewText}
+                    onChange={handleEditChange}
+                  />
+                </Form.Group>
+              </Form>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Cancel
+              </Button>
+              <Button variant="primary" onClick={handleEditSubmit}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
     </div>
+    
   );
   
 };

@@ -75,6 +75,37 @@ const resolvers = {
     removeReview: async (parent, { reviewId }) => {
       return Review.findOneAndDelete({ _id: reviewId });
     },
+    updateReview: async (parent, { reviewId, rating, reviewText, createdAt }, context) => {
+      // You should have the Review model imported and accessible
+    
+      try {
+        // Find the review by its ID
+        const review = await Review.findOne({ _id: reviewId });
+    
+        if (!review) {
+          throw new Error("Review not found");
+        }
+    
+        // Update the review fields if provided
+        if (rating !== undefined) {
+          review.rating = rating;
+        }
+        if (reviewText !== undefined) {
+          review.reviewText = reviewText;
+        }
+        if (createdAt !== undefined) {
+          review.createdAt = createdAt;
+        }
+    
+        // Save the updated review
+        await review.save();
+    
+        return review; // Return the updated review
+      } catch (error) {
+        throw new Error("Error updating review: " + error.message);
+      }
+    },
+    
     removeComment: async (parent, { reviewId, commentId }) => {
       return Review.findOneAndUpdate(
         { _id: reviewId },
