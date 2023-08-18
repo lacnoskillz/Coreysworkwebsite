@@ -27,10 +27,39 @@
     /* Allow click-through to content below */
 }
 .servicescontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1200px; /* Adjust this value as needed */
-  }
+
+ display: flex;
+ flex-direction: column;
   
+}
+.subcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.servicesh3{
+    text-align: center;
+    margin-top: 5%;
+}
+.servicep{
+    text-align: center;
+    }
+    
+    .servicesdescription{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 5%;
+        font-size: large;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+.servicesbottomdetails{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 3%;
+}

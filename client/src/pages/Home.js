@@ -114,7 +114,7 @@ const Home = () => {
 
        </p>
        </div>
-       <h2 className='ourservicesh2'>Our Services</h2>
+       <h2 className='ourservicesh2'>My Services</h2>
      
       </div>
       <div className="p-3 servicesimages" style={{ backgroundImage: `url(${home})` }}>

@@ -66,15 +66,35 @@ const Services = () => {
       ];
     return (
       <div>
-    <div className='headerdiv3'>
-  <div className="overlay2"></div>
-  <h2 className='Servicesh2'>Services</h2>
-</div>
-      <div className="servicescontainer">
-        {cardData.map((service, index) => (
-          <Card key={index} {...service} />
-        ))}
+      <div className='headerdiv3'>
+      <div className="overlay2"></div>
+        <h2 className='Servicesh2'>Services</h2>
       </div>
+      <div className="servicesdescription"><p>
+        As a dedicated and skilled professional, I offer a comprehensive range of home improvement services tailored to meet your needs. With a keen eye for detail and a passion for excellence, I handle every aspect of your project. From painting walls to spackling imperfections, I ensure your living spaces are a true reflection of your style. Furniture in need of repair? Count on me to restore it with careful craftsmanship. Leaky faucets, broken fixtures, outdoor repairs – I tackle them all, ensuring your home remains in top shape. Plumbing issues? I've got you covered, providing efficient solutions for any plumbing concern. With every installation and repair, I bring precision and expertise, guaranteeing that your home receives the highest quality care from a single, dedicated source.
+        </p>
+        </div>
+      <h3 className="servicesh3">Here is a list of some of my services</h3>
+      <p className="servicep">click for more info</p>
+      <div className="servicescontainer">
+        <div className="subcontainer">
+      <Card {...cardData[0]}/>
+      <Card {...cardData[1]}/>
+      <Card {...cardData[2]}/>
+      </div>
+      <div className="subcontainer">
+      <Card {...cardData[3]}/>
+      <Card {...cardData[4]}/>
+      <Card {...cardData[5]}/>
+      </div>
+      <div className="subcontainer">
+      <Card {...cardData[6]}/>
+      </div>
+      </div>
+      <div className="servicesbottomdetails">Now serving San franscico and surronding areas</div>
+      <div className='buttondiv'>
+<button className="button-89" >Call Now: (808)-808-8080</button>
+</div>
     </div>
     )
 }

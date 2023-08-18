@@ -10,16 +10,11 @@ function Card({imageUrl, Title, Description}) {
   const handleShow = () => setShow(true);
   return (
     <div className="cardcontainer">
-    <div className='card m-1 p-1 text-center'>
+    <div className='card m-1 p-1 text-center' >
       <img className ="cardimage" src={imageUrl} onClick={() => handleShow()} alt='Card displaying a service' />
       <div className='card-title'>{Title}</div>
     </div>
-    <div
-      className="modal show"
-      style={{ display: 'block', position: 'initial' }}
-    >
-    
-    </div>
+  
     <Modal centered show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{Title}</Modal.Title>
