@@ -50,16 +50,24 @@ const resolvers = {
 
       return { token, user };
     },
-    addReview: async (parent, { reviewText, reviewAuthor , rating}) => {
+    addReview: async (parent, { reviewText, reviewAuthor, rating }) => {
+      // Check if the user has already submitted a review
+      const existingReview = await Review.findOne({ reviewAuthor });
+    
+      if (existingReview) {
+        throw new Error('You can only submit one review.');
+      }
+    
       const review = await Review.create({ reviewText, reviewAuthor, rating });
-
+    
       await User.findOneAndUpdate(
         { username: reviewAuthor },
         { $addToSet: { reviews: review._id } }
       );
-
+    
       return review;
     },
+    
     addComment: async (parent, { reviewId, commentText, commentAuthor }) => {
       return Review.findOneAndUpdate(
         { _id: reviewId },

@@ -15,16 +15,12 @@ const ReviewForm = () => {
   const [rating, setRating] = useState(0);
   const [characterCount, setCharacterCount] = useState(0);
   const [newReview, setNewReview] = useState(null);
-  const [removeReview, {err}] = useMutation(REMOVE_REVIEW,{
-    pollInterval: 500,
-  })
+  const [removeReview, {err}] = useMutation(REMOVE_REVIEW)
   const [show, setShow] = useState(false);
     const [editedReviewId, setEditedReviewId] = useState(null);
     const [editedReviewText, setEditedReviewText] = useState('');
     const [editedRating, setEditedRating] = useState(0);
-    const [updateReview] = useMutation(UPDATE_REVIEW,{
-      pollInterval: 500,
-    });
+    const [updateReview] = useMutation(UPDATE_REVIEW);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
     const handleEditSubmit = async (event) => {
@@ -58,7 +54,8 @@ const ReviewForm = () => {
   const handleEditRatingChange = (newRating) => {
     setEditedRating(newRating);
   };
-  const [addReview, { error }] = useMutation(ADD_REVIEW, {
+  const [addReview, { error }] = useMutation(ADD_REVIEW,
+     {
     update(cache, { data: { addReview } }) {
       try {
         const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
@@ -72,7 +69,7 @@ const ReviewForm = () => {
         console.error(e);
       }
     },
-  });
+  } );
   //get user data/ username
   let loggedInProfile = ""
   if(Auth.loggedIn()){
