@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Footer.css'
 import { Link } from 'react-router-dom';
+import auth from '../../utils/auth';
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -55,12 +56,22 @@ const Footer = () => {
             <Link className="footer-link" to="/contact" onClick={scrollToTop}>
               Contact
             </Link>
-            <Link className="footer-link" to="/login" onClick={scrollToTop}>
-              Login
-            </Link>
-            <Link className="footer-link" to="/signup" onClick={scrollToTop}>
-              Sign Up
-            </Link>
+            {auth.loggedIn() ? (
+          <Link className="footer-link" to="/reviews" onClick={scrollToTop}>
+          Reviews
+        </Link>
+        
+      ) : (
+        // Render "Login" and "Sign Up" links when the user is not logged in
+        <>
+          <Link className="footer-link" to="/login" onClick={scrollToTop}>
+            Login
+          </Link>
+          <Link className="footer-link" to="/signup" onClick={scrollToTop}>
+            Sign Up
+          </Link>
+        </>
+      )}
           </div>
 
 
