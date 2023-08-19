@@ -35,6 +35,7 @@ if(auth.loggedIn()){
       console.error(err);
     }
   };
+  // console.log(reviewList,"list")
   if (reviewList.length === 0) {
     return <h3>No reviews yet. Be the first!</h3>;
   }
@@ -47,6 +48,8 @@ if(auth.loggedIn()){
             {review.reviewAuthor} <br />
             <span style={{ fontSize: '1rem' }}>
               made this review on {review.createdAt}
+            </span><br></br><span style={{ fontSize: '1rem' }}>
+             updated at {review.updatedAt}
             </span>
           </h4>
           <ReactStars value={review.rating} edit={false} />

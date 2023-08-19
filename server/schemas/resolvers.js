@@ -1,8 +1,9 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Review } = require('../models');
 const { signToken } = require('../utils/auth');
-
+const dateFormat = require('../utils/dateFormat');
 const resolvers = {
+  
   Query: {
      //find info of logged in user
     me: async (parent, args, context) => {
@@ -58,7 +59,12 @@ const resolvers = {
         throw new Error('You can only submit one review.');
       }
     
-      const review = await Review.create({ reviewText, reviewAuthor, rating });
+      const review = await Review.create({
+        reviewText,
+        reviewAuthor,
+        rating,
+        updatedAt: null,
+      });
     
       await User.findOneAndUpdate(
         { username: reviewAuthor },
@@ -67,6 +73,7 @@ const resolvers = {
     
       return review;
     },
+    
     
     addComment: async (parent, { reviewId, commentText, commentAuthor }) => {
       return Review.findOneAndUpdate(
@@ -83,7 +90,7 @@ const resolvers = {
     removeReview: async (parent, { reviewId }) => {
       return Review.findOneAndDelete({ _id: reviewId });
     },
-    updateReview: async (parent, { reviewId, rating, reviewText, createdAt }, context) => {
+    updateReview: async (parent, { reviewId, rating, reviewText}, context) => {
       // You should have the Review model imported and accessible
     
       try {
@@ -101,10 +108,8 @@ const resolvers = {
         if (reviewText !== undefined) {
           review.reviewText = reviewText;
         }
-        if (createdAt !== undefined) {
-          review.createdAt = createdAt;
-        }
-    
+        review.updatedAt = new Date();
+       
         // Save the updated review
         await review.save();
     

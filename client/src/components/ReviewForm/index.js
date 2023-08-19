@@ -114,7 +114,7 @@ let h3value = ""
     }
   };
   const ratingChanged = (newRating) => {
-    console.log(typeof(newRating));
+    // console.log(typeof(newRating));
       setRating(newRating)
   };
   const handleChange = (event) => {
@@ -148,7 +148,7 @@ let h3value = ""
     <div>
       <h3>{h3value}</h3>
   
-      {Auth.loggedIn() ? (
+      {Auth.loggedIn() && Auth.getProfile().data.role != 'admin'? (
         <>
           {userReviews && userReviews.length === 0 ? (
             // Show the form
@@ -219,6 +219,9 @@ let h3value = ""
               You made this Review <br />
               <span style={{ fontSize: '1rem' }}>
                 on {userReviews[0].createdAt}
+              </span><br></br>
+              <span style={{ fontSize: '1rem' }}>
+                updated at {userReviews[0].updatedAt}
               </span>
             </h4>
            <ReactStars

@@ -10,13 +10,14 @@ const typeDefs = gql`
   }
 
   type Review {
-    _id: ID
-    rating: Int
-    reviewText: String
-    reviewAuthor: String
-    createdAt: String
-    comments: [Comment]!
-  }
+  _id: ID
+  rating: Int
+  reviewText: String
+  reviewAuthor: String
+  createdAt: String
+  updatedAt: String
+  comments: [Comment]!
+}
 
   type Comment {
     _id: ID
@@ -44,7 +45,7 @@ const typeDefs = gql`
     addReview(reviewText: String!, reviewAuthor: String!, rating: Int!): Review
     addComment(reviewId: ID!, commentText: String!, commentAuthor: String!): Review
     removeReview(reviewId: ID!): Review
-    updateReview(reviewId: ID!, rating: Int, reviewText: String, createdAt: String): Review
+    updateReview(reviewId: ID!, rating: Int, reviewText: String): Review
     removeComment(reviewId: ID!, commentId: ID!): Review
   }
 `;

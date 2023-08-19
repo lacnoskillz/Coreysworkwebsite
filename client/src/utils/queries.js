@@ -11,6 +11,7 @@ export const QUERY_USER = gql`
         rating
         reviewText
         createdAt
+        updatedAt
       }
     }
   }
@@ -24,6 +25,7 @@ export const QUERY_REVIEWS = gql`
       reviewText
       reviewAuthor
       createdAt
+      updatedAt
     }
   }
 `;
@@ -36,6 +38,7 @@ export const QUERY_SINGLE_REVIEW = gql`
       reviewText
       reviewAuthor
       createdAt
+      updatedAt
       comments {
         _id
         commentText

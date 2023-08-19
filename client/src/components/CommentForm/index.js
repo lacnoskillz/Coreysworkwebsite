@@ -43,10 +43,10 @@ if(auth.loggedIn()){
       setCharacterCount(value.length);
     }
   };
-
+console.log(userRole,"role")
   return (
     <div>
-      {userRole === 'admin' || userreviewid == reviewId && (
+      {(userRole === 'admin' || userreviewid == reviewId)&& (
         <>
           <p
             className={`m-0 ${
