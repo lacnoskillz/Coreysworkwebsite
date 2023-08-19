@@ -16,4 +16,4 @@ website for a friends personal company
 ##### Link
 ***
 click for deployed app
-[click me](https://main.d34r7ezrso6mxi.amplifyapp.com/)
+[click me](https://coreyshandymanservices-c753feba012a.herokuapp.com/)
