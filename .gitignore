@@ -15,6 +15,7 @@
 /build
 
 # misc
+hashPassword.js
 /.env
 \.env
 .DS_Store
