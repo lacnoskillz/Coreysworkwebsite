@@ -48,6 +48,10 @@
 .contactphonehref {
     text-decoration: none;
 }
+/* text size contact */
+.contactpageinfo{
+    font-size: larger;
+}
 /* sucesspage */
 .successpage{
     text-align: center;
@@ -108,7 +112,15 @@ form{
 span {
     padding: 1px;
 }
-
+/* send button */
+.subbtn{
+    display:flex;
+    flex-direction: row;
+   
+}
+.subbtn i {
+    margin-right: 5px; /* Adjust the value to control the spacing */
+}
 @media only screen and (max-width: 713px) {
     #recapdiv {
         display: flex;
@@ -122,5 +134,10 @@ span {
 
         height: 100%;
 
+    }
+}
+@media only screen and (max-width: 560px) {
+    .contactpageinfo{
+        font-size: medium;
     }
 }

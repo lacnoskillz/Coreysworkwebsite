@@ -56,6 +56,48 @@ margin-top: 5%;
     background-color: aliceblue;
 }
 
+
+.learnabout {
+    border-radius: 4px;
+    background-color: orange;
+    border: 1px;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1%;
+    width: 30vh;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
+  .learnabout span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .learnabout span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .learnabout:hover span {
+    padding-right: 25px;
+  }
+  
+  .learnabout:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
 /* Media query for desktop */
 @media (min-width: 769px) {
     .servicesimages {
@@ -69,4 +111,8 @@ margin-top: 5%;
       height: 25vh; /* Adjust the height for mobile */
     }
   }
-  
+  @media (max-width: 768px) {
+    .learnabout {
+        width: auto; /* Allow the button to adapt to content width */
+    }
+}

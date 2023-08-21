@@ -91,7 +91,7 @@ const Services = () => {
       <Card {...cardData[6]}/>
       </div>
       </div>
-      <div className="servicesbottomdetails">Now serving San franscico and surronding areas</div>
+      <div className="servicesbottomdetails">Now serving San Diego and surronding areas</div>
       <div className='buttondiv'>
 <button className="button-89" >Call Now: (808)-808-8080</button>
 </div>

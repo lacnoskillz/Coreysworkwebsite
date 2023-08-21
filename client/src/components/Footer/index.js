@@ -39,9 +39,9 @@ const Footer = () => {
           <div className="footercontact">
             <h4>Contact</h4>
             <a href="http://maps.google.com/?q=San Diego California"><i className="bi bi-house-fill"></i>Address</a>
-            <p className='footercontactptag'>City-Name California</p>
-            <a href="mailto:name@email.com"><i className="bi bi-envelope-fill"></i>Email</a>
-            <p className='footercontactptag'>Sample@example.com</p>
+            <p className='footercontactptag'>San Diego California</p>
+            <a href="mailto:Coreyharrison8oh8@icloud.com"><i className="bi bi-envelope-fill"></i>Email</a>
+            <p className='footercontactptag'>Coreyharrison8oh8@icloud.com</p>
             <a href="tel:8088707003"><i className="bi bi-telephone-fill"></i>Phone</a>
             <p className='footercontactptag'>808-870-7003</p>
           </div>

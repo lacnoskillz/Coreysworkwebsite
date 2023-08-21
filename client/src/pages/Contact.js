@@ -34,8 +34,8 @@ const Contact = () => {
       <div className='Contactcontainer'>
       <div className='Contactdiv3'>
       <h3 className='Contacth3'>Contact Info</h3>
-      <p>CALL or TEXT: <a href="tel:808-870-7003" className='contactphonehref'>(808)870-7003</a></p>
-      <p>Email: sample@email.com</p>
+      <p className='contactpageinfo'>CALL or TEXT: <a href="tel:808-870-7003" className='contactphonehref'>(808)870-7003</a></p>
+      <p className='contactpageinfo'>Email: <a href="mailto:Coreyharrison8oh8@icloud.com">Coreyharrison8oh8@icloud.com</a></p>
       <p>Or fill out the form below</p>
       </div>
       <form required onSubmit={handleSubmit} >
@@ -109,7 +109,7 @@ const Contact = () => {
   <div id="recap"></div>
   </div>
   <div id="subbtndiv">
-        <button type="submit" id="subbtn" className="btn btn-primary">Submit</button>
+        <button type="submit" id="subbtn" className="btn btn-primary subbtn"><i class="bi bi-send"></i> Send</button>
         </div>
   
         </div>
