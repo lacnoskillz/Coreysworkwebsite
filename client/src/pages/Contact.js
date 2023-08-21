@@ -60,7 +60,36 @@ const Contact = () => {
           <div id='nameerr'></div>
         </div>
         <div className="mb-3">
-          <label className="form-label">Email address</label>
+    <label className="form-label">Number</label>
+    {/* Use type="tel" for phone number input */}
+    <input
+        type="tel"
+        className="form-control"
+        id="phone"
+        name="phone" // Use a unique name for the phone number field
+        required={true}
+        pattern="[0-9]*" // Use pattern attribute to allow only numeric characters
+        title="Please enter a valid phone number (digits only)"
+        onBlur={(e) => {
+            if (!e.target.value) {
+                document.getElementById('phoner').innerHTML = '<span style="color:red; font-size: 1vh;">This field is required.</span>'
+            } else {
+                document.getElementById('phoner').innerHTML = ''
+            }
+        }}
+        onChange={(e) => {
+            if (!e.target.value) {
+                document.getElementById('phoner').innerHTML = '<span style="color:red; font-size: 1vh;">This field is required.</span>'
+            } else {
+                document.getElementById('phoner').innerHTML = ''
+            }
+        }}
+    ></input>
+    <div id='phoner'></div>
+</div>
+
+        <div className="mb-3">
+          <label className="form-label">Email</label>
           <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" required={true} onChange={(e) => {
            if(e.target.value.match(/.+@.+\..+/)){
               document.getElementById('emailerr').innerHTML = ''
