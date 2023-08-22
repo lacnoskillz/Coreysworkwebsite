@@ -109,15 +109,14 @@ margin-top: 5%;
 /* Media query for desktop */
 @media (min-width: 769px) {
     .servicesimages {
+      
       height: 55vh; /* Adjust the height for desktop */
     }
   }
   
   /* Media query for mobile */
   @media (max-width: 925px) {
-    .servicesimages {
-      height: 25vh; /* Adjust the height for mobile */
-    }
+   
   }
   @media (max-width: 768px) {
     .learnabout {

@@ -8,6 +8,8 @@ h4{
 .h4footermadewith{
     margin-bottom: 6%;
     border: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
 }
 .copyright{
     color: white
@@ -55,6 +57,24 @@ h4{
        
         border: 1px solid white;
      
+    }
+  
+  }
+  @media (max-width: 520px) {
+    .h4footermadewith{
+       font-size:medium;
+    }
+  
+  }
+  @media (max-width: 380px) {
+    .h4footermadewith{
+       font-size:small;
+    }
+  
+  }
+  @media (max-width: 324px) {
+    .h4footermadewith{
+       font-size: x-small;
     }
   
   }
