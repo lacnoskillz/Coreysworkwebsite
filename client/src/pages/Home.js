@@ -1,30 +1,29 @@
-import React, {  useState, //useEffect
+import React, {  useState, useEffect
 } from 'react';
 import './styles/Home.css';
-import cali from './images/cali3.jpg';
 import { Link } from 'react-router-dom';
 import home from './images/house2.jpg'
 import Card from '../components/Card'
 const Home = () => {
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const mainContainer = document.querySelector('.servicesimages');
-  //     if (mainContainer) { // Check if the element exists
-  //       const scrollPosition = window.scrollY;
-  //       mainContainer.style.backgroundPosition = `center ${60 - scrollPosition * 0.07}%`;
-  //     }
-  //   };
+  useEffect(() => {
+    const handleScroll = () => {
+      const mainContainer = document.querySelector('.maincontainer');
+      if (mainContainer) { // Check if the element exists
+        const scrollPosition = window.scrollY;
+        mainContainer.style.backgroundPosition = `center ${60 - scrollPosition * 0.08}%`;
+      }
+    };
 
-  //   if (window.innerWidth > 960) {
-  //     window.addEventListener('scroll', handleScroll);
-  //   }
+    if (window.innerWidth > 960) {
+      window.addEventListener('scroll', handleScroll);
+    }
 
-  //   return () => {
-  //     if (window.innerWidth > 960) {
-  //       window.removeEventListener('scroll', handleScroll);
-  //     }
-  //   };
-  // }, []);
+    return () => {
+      if (window.innerWidth > 960) {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
   const initialNumOfCards = 3;
   const [startIdx, setStartIdx] = useState(0);
   const [endIdx, setEndIdx] = useState(initialNumOfCards);
@@ -94,16 +93,24 @@ const Home = () => {
   return (
     
     <div>
-      <div className='maincontainer' style={{ backgroundImage: `url(${cali})` }}>
+      <div className='maincontainer'>
         <div className='mainintro'>
           <p className='maininfo'>Handy Man California</p>
-          <p className='mainsubinfo'>RELIABLE, FAIR, AND SAFE - Handyman Services, San Diego and surrounding areas</p>
-          <em className='mainquote'>lets work together</em><br></br>
-          <Link to="/about">
-          <button className='learnabout'> <span>MEET YOUR NEW HANDYMAN</span></button>
+          <p className='mainsubinfo'>
+            RELIABLE, FAIR, AND SAFE - Handyman Services, San Diego and surrounding areas
+          </p>
+          <em className='mainquote'>lets work together</em>
+          <br></br>
+          <div className='learnaboutdiv'>
+          <Link to='/about'>
+            <button className='learnabout'>
+              <span>MEET YOUR NEW HANDYMAN</span>
+            </button>
           </Link>
+          </div>
         </div>
       </div>
+      
       <div className='Servicesdiv'>
         <div className='servicestext'>
        <h2>Professional Handyman and Repair Services</h2>

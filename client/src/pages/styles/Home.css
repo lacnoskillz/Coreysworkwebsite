@@ -1,15 +1,19 @@
+
 .maincontainer{
     display: flex;
     justify-content: center;
     align-items: center;
-  
-    height: 70vh;
+    background-image: url('../images/cali3.png');
+    height: 80vh;
     background-repeat: no-repeat;
     background-size: cover;
-    
+    background-position: center;
 }
-.mainintro{
-    padding: 20%;
+
+.mainintro {
+  padding: 5%;
+  margin: 1%;
+  background-color: rgba(0, 0, 0, 0.5); /* Grey color with 50% opacity */
 }
 .maininfo{
     font-size: 8vh;
@@ -56,7 +60,11 @@ margin-top: 5%;
     background-color: aliceblue;
 }
 
-
+/* mett your new handyman */
+.learnaboutdiv{
+  display: flex;
+  justify-content: center;
+}
 .learnabout {
     border-radius: 4px;
     background-color: orange;
