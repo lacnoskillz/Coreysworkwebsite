@@ -29,7 +29,7 @@ const reviewSchema = new Schema({
   updatedAt: {
     type: Date,
     default: null,
-    get: (timestamp) => dateFormat(timestamp), 
+    get: (timestamp) => (timestamp ? dateFormat(timestamp) : null),
   },
   comments: [
     {

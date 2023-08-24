@@ -50,9 +50,12 @@ if(auth.loggedIn()){
             {review.reviewAuthor} <br />
             <span style={{ fontSize: '1rem' }}>
               made this review on {review.createdAt}
-            </span><br></br><span style={{ fontSize: '1rem' }}>
+            </span><br></br>
+            {review.updatedAt != null && (
+            <span style={{ fontSize: '1rem' }}>
              updated at {review.updatedAt}
             </span>
+            )}
           </h4>
           <ReactStars value={review.rating} edit={false} />
           <div className="card-body bg-light p-2">

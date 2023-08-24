@@ -220,9 +220,11 @@ let h3value = ""
               <span style={{ fontSize: '1rem' }}>
                 on {userReviews[0].createdAt}
               </span><br></br>
+              {userReviews[0].updatedAt !== null && (
               <span style={{ fontSize: '1rem' }}>
                 updated at {userReviews[0].updatedAt}
               </span>
+              )}
             </h4>
            <ReactStars
            value={userReviews[0].rating}
