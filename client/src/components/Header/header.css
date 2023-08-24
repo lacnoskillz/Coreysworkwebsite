@@ -22,14 +22,16 @@ h1{
     height: 5vh;
 }
 .headerphone{
+    margin-right: 5px;
     background-color: orange;
     position: relative;
     display: inline-block;
-    padding: 10px 15px;
+    padding: 8% 6%;
     color: white;
     text-decoration: none;
     border: none;
     border-radius: 4px;
+    white-space: nowrap; 
     cursor: pointer;
  
 }
@@ -39,6 +41,18 @@ h1{
 .headerphonediv{
     margin: 1%;
 }
-
+@media (max-width: 500px) {
+    .headerphone{
+      font-size: small;
+      right: 10px;
+        white-space: nowrap; 
+       
+      
+   
+    
+     
+    }
+  
+  }
 
 

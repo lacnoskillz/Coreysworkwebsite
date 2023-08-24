@@ -40,7 +40,7 @@ if(auth.loggedIn()){
   if (reviewList.length === 0) {
     return <h3>No reviews yet. Be the first!</h3>;
   }
-
+//TODO add pagnation?
   return (
     <div>
       <h3>{title}</h3>

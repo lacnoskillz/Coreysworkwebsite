@@ -18,6 +18,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Nav from './components/Nav'
+import Pagenotfound from './pages/404page';
 import Reviews2 from './pages/Reviews2';
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -52,6 +53,7 @@ function App() {
         <Nav />
          
             <Routes>
+            <Route path="*" element={<Pagenotfound />} />
               <Route 
                 path="/" 
                 element={<Home />} 
