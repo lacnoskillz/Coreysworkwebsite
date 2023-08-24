@@ -26,6 +26,9 @@ export const QUERY_REVIEWS = gql`
       reviewAuthor
       createdAt
       updatedAt
+      comments{
+          commentAuthor
+        }
     }
   }
 `;

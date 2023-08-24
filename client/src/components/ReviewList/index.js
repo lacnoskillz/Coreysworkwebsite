@@ -6,6 +6,7 @@ import { useMutation } from '@apollo/client';
 import auth from '../../utils/auth';
 
 const ReviewList = ({ reviews, title }) => {
+
   const [removeReview, { err }] = useMutation(REMOVE_REVIEW);
   const [deleteConfirmationStates, setDeleteConfirmationStates] = useState(
     reviews.map(() => false)
@@ -39,6 +40,7 @@ if(auth.loggedIn()){
   if (reviewList.length === 0) {
     return <h3>No reviews yet. Be the first!</h3>;
   }
+
   return (
     <div>
       <h3>{title}</h3>
@@ -93,12 +95,16 @@ if(auth.loggedIn()){
               </button>
             </div>
           )}
-          <Link
-            className="btn bg-primary btn-block btn-squared"
-            to={`/reviews/${review._id}`}
-          >
-            View comments
-          </Link>
+        {review.comments.length > 0 && (
+  <div>
+    <Link
+      className="btn bg-primary btn-block btn-squared"
+      to={`/reviews/${review._id}`}
+    >
+      View comments
+    </Link>
+  </div>
+)}
         </div>
       ))}
     </div>
