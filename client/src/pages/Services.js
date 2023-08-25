@@ -22,7 +22,10 @@ const Services = () => {
           }
         };
       }, []);
-
+      // todo add +1?
+      const callcorey2 = () => {
+        window.location.href = "tel:8088707003"
+      }
 
       const cardData = [
         {
@@ -64,6 +67,7 @@ const Services = () => {
           imageUrl: 'https://www.lifesavvy.com/p/uploads/2021/07/95b8f811-3.jpg?width=1200',
         },
       ];
+   
     return (
       <div>
       <div className='headerdiv3'>
@@ -93,7 +97,7 @@ const Services = () => {
       </div>
       <div className="servicesbottomdetails">Now serving San Diego and surronding areas</div>
       <div className='buttondiv'>
-<button className="button-89" >Call Now: (808)-870-7003</button>
+      <button className="button-89" onClick={callcorey2}>Call Now: (808)-870-7003</button>
 </div>
     </div>
     )

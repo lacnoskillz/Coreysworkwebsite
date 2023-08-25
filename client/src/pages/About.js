@@ -22,7 +22,9 @@ const About = () => {
       }
     };
   }, []);
-
+const callcorey = () => {
+  window.location.href = "tel:+18088707003"
+}
   return (
     <div>
       
@@ -41,7 +43,7 @@ const About = () => {
       Call and let me know how I can help you!
       </div>
       <div className='buttondiv'>
-<button className="button-89" >Call Now: (808)-870-7003</button>
+<button className="button-89" onClick={callcorey}>Call Now: (808)-870-7003</button>
 </div>
     </div>
   );
